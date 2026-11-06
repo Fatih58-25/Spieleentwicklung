@@ -1,0 +1,11 @@
+Model Information:
+* title:	Town
+* source:	https://sketchfab.com/3d-models/town-5c662a8edbc0460087ec58b0fa573715
+* author:	Pasha (https://sketchfab.com/perga8-hAwguf-hybwup)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Town" (https://sketchfab.com/3d-models/town-5c662a8edbc0460087ec58b0fa573715) by Pasha (https://sketchfab.com/perga8-hAwguf-hybwup) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
