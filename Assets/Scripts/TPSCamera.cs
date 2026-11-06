@@ -25,6 +25,17 @@ public class TPSCamera : MonoBehaviour
     [Tooltip("Duvardan uzaklasirken kameranin geri donus hizi.")]
     public float collisionSmoothSpeed = 8f;
 
+    [Header("Camera Shake (Vurus Sarsintisi)")]
+    [Tooltip("En yuksek sarsintida kameranin kayabilecegi mesafe (metre)")]
+    public float shakeMaxOffset = 0.12f;
+    [Tooltip("En yuksek sarsintida yatma acisi (derece)")]
+    public float shakeMaxRoll = 2.5f;
+    public float shakeFrequency = 25f;
+    [Tooltip("Saniyede ne kadar trauma azalir. Buyudukce sarsinti daha kisa surer.")]
+    public float traumaDecay = 2.2f;
+
+    private float trauma = 0f;
+
     [Header("Rotation Settings")]
     public float mouseSensitivity = 2.0f;
     public float yMinLimit = -15f;
@@ -170,6 +181,35 @@ public class TPSCamera : MonoBehaviour
 
         transform.rotation = rotation;
         transform.position = position;
+
+        ApplyShake();
+    }
+
+    // ------------------------------------------------------------
+    //  KAMERA SARSINTISI (trauma tabanli)
+    // ------------------------------------------------------------
+
+    /// <summary>0-1 arasi deger ekler. Sarsinti siddeti trauma^2 ile artar, yani buyuk vuruslar belirgin sert hisseder.</summary>
+    public void AddShake(float amount)
+    {
+        trauma = Mathf.Clamp01(trauma + amount);
+    }
+
+    private void ApplyShake()
+    {
+        if (trauma <= 0f) return;
+
+        float shake = trauma * trauma;
+        float t = Time.unscaledTime * shakeFrequency;
+
+        float x = (Mathf.PerlinNoise(t, 0.0f) - 0.5f) * 2f;
+        float y = (Mathf.PerlinNoise(0.0f, t) - 0.5f) * 2f;
+        float r = (Mathf.PerlinNoise(t, t) - 0.5f) * 2f;
+
+        transform.position += (transform.right * x + transform.up * y) * (shakeMaxOffset * shake);
+        transform.rotation *= Quaternion.Euler(0f, 0f, r * shakeMaxRoll * shake);
+
+        trauma = Mathf.Max(0f, trauma - traumaDecay * Time.unscaledDeltaTime);
     }
 
     /// <summary>
