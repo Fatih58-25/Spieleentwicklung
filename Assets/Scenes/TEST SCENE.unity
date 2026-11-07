@@ -762,7 +762,7 @@ PrefabInstance:
       addedObject: {fileID: 923046370}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40d0e6268dced5caaa0a725146f8a390, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 923046371}
+      addedObject: {fileID: 923046373}
   m_SourcePrefab: {fileID: 100100000, guid: 40d0e6268dced5caaa0a725146f8a390, type: 3}
 --- !u!4 &601991106 stripped
 Transform:
@@ -1113,10 +1113,10 @@ PrefabInstance:
       addedObject: {fileID: 1824135735}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40d0e6268dced5caaa0a725146f8a390, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1824135738}
+      addedObject: {fileID: 1824135737}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40d0e6268dced5caaa0a725146f8a390, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1824135737}
+      addedObject: {fileID: 1824135740}
   m_SourcePrefab: {fileID: 100100000, guid: 40d0e6268dced5caaa0a725146f8a390, type: 3}
 --- !u!1 &872064695 stripped
 GameObject:
@@ -1195,7 +1195,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 2.26, z: 0}
---- !u!114 &923046371
+--- !u!114 &923046373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1206,8 +1206,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31c1917775acbdba49d7d673b3fb77f8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHitReceiver
-  maxHealth: 100
+  m_EditorClassIdentifier: '::'
+  maxHealth: 300
   destroyDelayAfterDeath: 0
   maxPoise: 60
   poiseRegenDelay: 2.5
@@ -1223,11 +1223,22 @@ MonoBehaviour:
   flinchTiltAngle: 10
   flinchRecoverTime: 0.12
   shudderAmount: 0.025
-  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
   flashDuration: 0.1
-  hitVfxPrefab: {fileID: 0}
+  hitSfxList:
+  - {fileID: 8300000, guid: 339ef24ffb63c54f58dc1dc05088b559, type: 3}
+  - {fileID: 8300000, guid: ced86be1b49aa4b0282f77989885520c, type: 3}
+  - {fileID: 8300000, guid: c84765a6c7888043d9b89d20fda72d8e, type: 3}
+  - {fileID: 8300000, guid: d5189f13674a2c140be4d8f8c99d2f4f, type: 3}
+  - {fileID: 8300000, guid: 63d5cf90b69a94d5cb09058b3908c0ad, type: 3}
+  - {fileID: 8300000, guid: 90362f13da690e12d933d0d17f02bb3a, type: 3}
+  - {fileID: 8300000, guid: 2a5f3f10fce5384299214605a3c32aa2, type: 3}
+  - {fileID: 8300000, guid: 9228264bc47c92a8a8affaaf90a47d1c, type: 3}
+  - {fileID: 8300000, guid: 0dbe4016b1353d5a1869d202f8711db5, type: 3}
+  sfxVolume: 0.2
+  sfxPlayMode: 0
+  hitVfxPrefab: {fileID: 362261158077530393, guid: 20fda529c996a334da7fd65b48ea40df, type: 3}
   vfxLifetime: 2
-  hitSfx: {fileID: 0}
   slowMoOnKill: 1
   killSlowScale: 0.3
   killSlowDuration: 0.35
@@ -2013,7 +2024,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 2.33, z: 0}
---- !u!114 &1824135738
+--- !u!114 &1824135740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2024,8 +2035,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31c1917775acbdba49d7d673b3fb77f8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHitReceiver
-  maxHealth: 100
+  m_EditorClassIdentifier: '::'
+  maxHealth: 300
   destroyDelayAfterDeath: 0
   maxPoise: 60
   poiseRegenDelay: 2.5
@@ -2042,10 +2053,21 @@ MonoBehaviour:
   flinchRecoverTime: 0.12
   shudderAmount: 0.025
   flashColor: {r: 1, g: 1, b: 1, a: 1}
-  flashDuration: 0.1
-  hitVfxPrefab: {fileID: 0}
+  flashDuration: 0.3
+  hitSfxList:
+  - {fileID: 8300000, guid: 339ef24ffb63c54f58dc1dc05088b559, type: 3}
+  - {fileID: 8300000, guid: ced86be1b49aa4b0282f77989885520c, type: 3}
+  - {fileID: 8300000, guid: c84765a6c7888043d9b89d20fda72d8e, type: 3}
+  - {fileID: 8300000, guid: d5189f13674a2c140be4d8f8c99d2f4f, type: 3}
+  - {fileID: 8300000, guid: 63d5cf90b69a94d5cb09058b3908c0ad, type: 3}
+  - {fileID: 8300000, guid: 90362f13da690e12d933d0d17f02bb3a, type: 3}
+  - {fileID: 8300000, guid: 2a5f3f10fce5384299214605a3c32aa2, type: 3}
+  - {fileID: 8300000, guid: 9228264bc47c92a8a8affaaf90a47d1c, type: 3}
+  - {fileID: 8300000, guid: 0dbe4016b1353d5a1869d202f8711db5, type: 3}
+  sfxVolume: 0.2
+  sfxPlayMode: 0
+  hitVfxPrefab: {fileID: 362261158077530393, guid: 20fda529c996a334da7fd65b48ea40df, type: 3}
   vfxLifetime: 2
-  hitSfx: {fileID: 0}
   slowMoOnKill: 1
   killSlowScale: 0.3
   killSlowDuration: 0.35
@@ -2165,7 +2187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c1917775acbdba49d7d673b3fb77f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  maxHealth: 100
+  maxHealth: 300
   destroyDelayAfterDeath: 0
   maxPoise: 60
   poiseRegenDelay: 2.5
@@ -2181,11 +2203,22 @@ MonoBehaviour:
   flinchTiltAngle: 10
   flinchRecoverTime: 0.12
   shudderAmount: 0.025
-  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
   flashDuration: 0.1
-  hitVfxPrefab: {fileID: 0}
+  hitSfxList:
+  - {fileID: 8300000, guid: 339ef24ffb63c54f58dc1dc05088b559, type: 3}
+  - {fileID: 8300000, guid: ced86be1b49aa4b0282f77989885520c, type: 3}
+  - {fileID: 8300000, guid: c84765a6c7888043d9b89d20fda72d8e, type: 3}
+  - {fileID: 8300000, guid: d5189f13674a2c140be4d8f8c99d2f4f, type: 3}
+  - {fileID: 8300000, guid: 63d5cf90b69a94d5cb09058b3908c0ad, type: 3}
+  - {fileID: 8300000, guid: 90362f13da690e12d933d0d17f02bb3a, type: 3}
+  - {fileID: 8300000, guid: 2a5f3f10fce5384299214605a3c32aa2, type: 3}
+  - {fileID: 8300000, guid: 9228264bc47c92a8a8affaaf90a47d1c, type: 3}
+  - {fileID: 8300000, guid: 0dbe4016b1353d5a1869d202f8711db5, type: 3}
+  sfxVolume: 0.208
+  sfxPlayMode: 0
+  hitVfxPrefab: {fileID: 362261158077530393, guid: 20fda529c996a334da7fd65b48ea40df, type: 3}
   vfxLifetime: 2
-  hitSfx: {fileID: 0}
   slowMoOnKill: 1
   killSlowScale: 0.3
   killSlowDuration: 0.35
@@ -2460,11 +2493,11 @@ MonoBehaviour:
     hitWindowEnd: 0.5
     damage: 10
     poiseDamage: 15
-    knockbackDistance: 0.8
+    knockbackDistance: 1
     hitStopTime: 0.06
     cameraShake: 0.18
   - stateName: Attack2
-    comboWindowStart: 0.28
+    comboWindowStart: 0.532
     endTime: 0.85
     crossFadeIn: 0.08
     hitWindowStart: 0.25
@@ -2479,7 +2512,7 @@ MonoBehaviour:
     endTime: 0.9
     crossFadeIn: 0.08
     hitWindowStart: 0.3
-    hitWindowEnd: 0.6
+    hitWindowEnd: 0.45
     damage: 20
     poiseDamage: 40
     knockbackDistance: 2.5

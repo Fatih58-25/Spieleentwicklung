@@ -49,12 +49,21 @@ public class EnemyHitReceiver : MonoBehaviour, IDamageable
     [Header("Hit Flash")]
     public Color flashColor = Color.white;
     public float flashDuration = 0.1f;
-
+[Header("Audio Effects (Vuruş Sesleri)")]
+public AudioClip[] hitSfxList;
+[Range(0f, 1f)] public float sfxVolume = 0.5f;
+    
+    public enum SFXPlayMode { SmartRandom, PureRandom, Sequential }
+    [Tooltip("SmartRandom: Üst üste aynı sesin çalmasını engeller (Tavsiye edilen).")]
+    public SFXPlayMode sfxPlayMode = SFXPlayMode.SmartRandom;
+    
+    private int lastPlayedSfxIndex = -1;
+    private int sequentialSfxIndex = 0;
     [Header("Effects")]
     [Tooltip("Kivilcim vb. Temas noktasinda, yuzey normaline bakacak sekilde olusur.")]
     public GameObject hitVfxPrefab;
     public float vfxLifetime = 2f;
-    public AudioClip hitSfx;
+    
     public bool slowMoOnKill = true;
     public float killSlowScale = 0.3f;
     public float killSlowDuration = 0.35f;
@@ -188,7 +197,8 @@ public class EnemyHitReceiver : MonoBehaviour, IDamageable
 
         // Efektler: temas aninda hemen
         SpawnVfx(hit);
-        if (hitSfx != null) AudioSource.PlayClipAtPoint(hitSfx, hit.point);
+        // Eski satırı sil ve bunu ekle:
+    PlaySmartHitSfx(hit.point);
 
         // Denge (poise)
         bool staggeredNow = false;
@@ -443,5 +453,50 @@ public class EnemyHitReceiver : MonoBehaviour, IDamageable
         if (animator == null || string.IsNullOrEmpty(triggerName)) return;
         if (!triggerNames.Contains(triggerName)) return;
         animator.SetTrigger(triggerName);
+    }
+
+    private void PlaySmartHitSfx(Vector3 point)
+    {
+        if (hitSfxList == null || hitSfxList.Length == 0) return;
+
+        AudioClip clipToPlay = null;
+
+        if (hitSfxList.Length == 1)
+        {
+            clipToPlay = hitSfxList[0];
+        }
+        else
+        {
+            switch (sfxPlayMode)
+            {
+                case SFXPlayMode.PureRandom:
+                    int randIdx = Random.Range(0, hitSfxList.Length);
+                    clipToPlay = hitSfxList[randIdx];
+                    break;
+
+                case SFXPlayMode.Sequential:
+                    clipToPlay = hitSfxList[sequentialSfxIndex];
+                    sequentialSfxIndex = (sequentialSfxIndex + 1) % hitSfxList.Length;
+                    break;
+
+                case SFXPlayMode.SmartRandom:
+                default:
+                    int newIdx;
+                    do
+                    {
+                        newIdx = Random.Range(0, hitSfxList.Length);
+                    } while (newIdx == lastPlayedSfxIndex && hitSfxList.Length > 1);
+
+                    lastPlayedSfxIndex = newIdx;
+                    clipToPlay = hitSfxList[newIdx];
+                    break;
+            }
+        }
+
+        if (clipToPlay != null)
+{
+    // PlayClipAtPoint yerine ses seviyesini ayarlayarak çalıyoruz:
+    AudioSource.PlayClipAtPoint(clipToPlay, point, sfxVolume);
+}
     }
 }
