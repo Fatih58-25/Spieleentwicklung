@@ -34,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
         [Tooltip("Direnci 0 olan bir dusmanin metre cinsinden itilecegi mesafe")]
         public float knockbackDistance = 0.8f;
 
+        [Header("Vuruş Hissi & İleri Atılma (Lunge)")]
+        [Tooltip("Vuruş anında karakterin düşmana doğru süzülme/adım atma hızı")]
+        public float forwardImpulse = 3.5f;
+
         [Header("Vurus Hissi")]
         [Tooltip("Vurus aninda oyuncu + dusman animasyonunun donma suresi (sn)")]
         public float hitStopTime = 0.06f;
@@ -208,18 +212,29 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // --- HAREKET & DONUS ---
-        Vector3 moveDirection = Vector3.zero;
+       Vector3 moveDirection = Vector3.zero;
 
         if (isAttacking)
         {
-            // Vurus basinda kisa sure hedefe/yone hizla don, sonra sabit kal
+            // 1. Vuruş başında kısa süre hedefe/yöne hızla dön
             if (turnTimer > 0f)
             {
                 turnTimer -= Time.deltaTime;
                 Quaternion attackRot = Quaternion.LookRotation(attackFacing);
                 transform.rotation = Quaternion.Slerp(transform.rotation, attackRot, attackTurnSpeed * Time.deltaTime);
             }
-            // Yatay hareket yok (root motion aciksa OnAnimatorMove halleder)
+
+            // 2. Vuruşun aktif savurma anında ileri doğru süzülme (Lunge) ver
+            float progress;
+            if (GetAttackProgress(out progress))
+            {
+                AttackStep currentStep = attacks[comboIndex];
+                // Hasar penceresi boyunca ileri doğru itme uygula ki düşmanı kovalasın
+                if (progress >= currentStep.hitWindowStart && progress <= currentStep.hitWindowEnd)
+                {
+                    moveDirection = transform.forward * currentStep.forwardImpulse;
+                }
+            }
         }
         else if (desiredDir.sqrMagnitude > 0.01f)
         {
@@ -228,8 +243,18 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
-        Vector3 finalMove = moveDirection * currentSpeed;
-        finalMove.y = verticalVelocity;
+        Vector3 finalMove = moveDirection;
+        // Eğer saldırı dışındaysak normal hızı ve yerçekimini uygula
+        if (!isAttacking)
+        {
+            finalMove *= currentSpeed;
+            finalMove.y = verticalVelocity;
+        }
+        else
+        {
+            // Saldırı sırasında havada kalması veya düşmesi için dikey hızı koruyalım
+            finalMove.y = verticalVelocity;
+        }
 
         controller.Move(finalMove * Time.deltaTime);
 
@@ -260,17 +285,25 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                // Pencere acildiysa bir sonraki vurusa gec
-                bool hasNext = comboIndex < attacks.Length - 1;
+                // Pencere acildiysa sonraki vurusa VEYA son vuruştaysak tekrar 1. vurusa geç
                 float progress;
-                if (hasNext && GetAttackProgress(out progress) && progress >= attacks[comboIndex].comboWindowStart)
+                if (GetAttackProgress(out progress) && progress >= attacks[comboIndex].comboWindowStart)
                 {
-                    StartAttack(comboIndex + 1, desiredDir);
+                    if (comboIndex < attacks.Length - 1)
+                    {
+                        // Normal sonraki vuruş (Attack 2 veya Attack 3)
+                        StartAttack(comboIndex + 1, desiredDir);
+                    }
+                    else
+                    {
+                        // 3. Vuruşun da sonundayız ve tıklamaya devam ediyor: Başa dön (Attack 1)
+                        StartAttack(0, desiredDir);
+                    }
                 }
             }
         }
 
-        // 2) Vurus bitis kontrolu
+        // 2) Vurus bitis kontrolu (Eğer tıklanmıyorsa kombo biter ve idle'a döner)
         if (isAttacking)
         {
             float progress;
@@ -280,7 +313,6 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (Time.time - attackStartTime > 0.5f)
             {
-                // Guvenlik: state hic girilmediyse (yanlis isim vb.) takili kalma
                 EndCombo();
             }
         }
@@ -288,13 +320,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartAttack(int index, Vector3 desiredDir)
     {
+        // Eğer son vuruştan 1. vuruşa geçiyorsak ve oyuncu basmayı bıraktıysa buffer'ı sıfırla, yoksa basılı tutuyorsa döngüye devam etsin
+        bool isLoopingBack = (comboIndex == attacks.Length - 1 && index == 0);
+        
         comboIndex = index;
         swingId++;
         isAttacking = true;
-        bufferTimer = 0f;
+        
+        if (!isLoopingBack) bufferTimer = 0f; // Eğer normal kombo ilerlemesiyse buffer'ı tüket
+        
         attackStartTime = Time.time;
 
-        // Yuz yonu: kilitli dusman varsa ona, yoksa girilen yone
+        // Yuz yonu kodları aynı kalacak...
         Vector3 face = Vector3.zero;
         if (tpsCamera != null && tpsCamera.IsLockedOn && tpsCamera.LockedTarget != null)
         {

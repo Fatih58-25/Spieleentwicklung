@@ -5,10 +5,7 @@ using UnityEngine.Events;
 
 /// <summary>
 /// Dusman ana objesine tak (robot, orumcek, dinozor...). Hasar, denge (poise/stagger),
-/// geri tepme, prosedurel sarsilma, vurus parlamasi ve efektleri yonetir.
-///
-/// NavMeshAgent, CharacterController ve Rigidbody ile calisir (hangisi varsa).
-/// AI scriptin 'IsBusy' true iken hareket / saldiri kararini durdurmali.
+/// geri tepme, prosedurel sarsilma, vurus parlamasi, ses efektleri ve can barini yonetir.
 /// </summary>
 [DisallowMultipleComponent]
 public class EnemyHitReceiver : MonoBehaviour, IDamageable
@@ -49,9 +46,15 @@ public class EnemyHitReceiver : MonoBehaviour, IDamageable
     [Header("Hit Flash")]
     public Color flashColor = Color.white;
     public float flashDuration = 0.1f;
-[Header("Audio Effects (Vuruş Sesleri)")]
-public AudioClip[] hitSfxList;
-[Range(0f, 1f)] public float sfxVolume = 0.5f;
+
+    [Header("Audio Effects (Vuruş Sesleri)")]
+    [Tooltip("9 adet vuruş sesini buraya sürükle (1-6 normal, 7-9 farklı tonlar).")]
+    public AudioClip[] hitSfxList;
+    [Range(0f, 1f)] public float sfxVolume = 0.5f;
+
+    [Tooltip("Robotun canı sıfırlandığında (ölümde) çalacak patlama sesi.")]
+    public AudioClip deathSfx; // <-- YENİ
+    [Range(0f, 1f)] public float deathSfxVolume = 0.8f;
     
     public enum SFXPlayMode { SmartRandom, PureRandom, Sequential }
     [Tooltip("SmartRandom: Üst üste aynı sesin çalmasını engeller (Tavsiye edilen).")]
@@ -59,11 +62,28 @@ public AudioClip[] hitSfxList;
     
     private int lastPlayedSfxIndex = -1;
     private int sequentialSfxIndex = 0;
-    [Header("Effects")]
-    [Tooltip("Kivilcim vb. Temas noktasinda, yuzey normaline bakacak sekilde olusur.")]
-    public GameObject hitVfxPrefab;
+
+   [Header("Effects")]
+    [Tooltip("Normal vuruş efektleri ve her birinin kendi özel boyutu.")]
+    public HitVfxEntry[] hitVfxEntries;
+
+    [Tooltip("Ölüm anında çıkacak özel patlama efekti.")]
+    public GameObject deathVfxPrefab;
+    public float deathVfxScale = 1.5f;
+
     public float vfxLifetime = 2f;
+
+    [System.Serializable]
+    public struct HitVfxEntry
+    {
+        public GameObject prefab;
+        public float scale;
+    }
     
+    [Header("VFX Size")]
+    public float hitVfxScale = 1f; 
+    
+
     public bool slowMoOnKill = true;
     public float killSlowScale = 0.3f;
     public float killSlowDuration = 0.35f;
@@ -78,6 +98,14 @@ public AudioClip[] hitSfxList;
     public UnityEvent onStagger;
     public UnityEvent onDeath;
 
+    [Header("Health Bar")]
+    [Tooltip("Boss gibi ozel can bari olanlarda kapat.")]
+    public bool showHealthBar = true;
+    [Tooltip("Bos birakirsan collider'larin tepesinden otomatik hesaplanir.")]
+    public Transform healthBarAnchor;
+    [Tooltip("Anchor / tepe noktasinin ustune eklenen yukseklik")]
+    public float healthBarExtraHeight = 0.4f;
+
     // --- Disaridan okunabilir durum ---
     public float CurrentHealth => currentHealth;
     public float CurrentPoise => currentPoise;
@@ -86,6 +114,24 @@ public AudioClip[] hitSfxList;
     /// <summary>true iken AI hareket etmemeli / saldirmamali.</summary>
     public bool IsBusy => isDead || isStaggered || hitStopTimer > 0f || knockbackVelocity.sqrMagnitude > 0.01f || rigidbodyBusyTimer > 0f;
     public Animator HitAnimator => animator;
+
+    public float MaxHealth => maxHealth;
+    public float HealthPercentage => maxHealth > 0f ? Mathf.Clamp01(currentHealth / maxHealth) : 0f;
+
+    /// <summary>Herhangi bir dusman hasar aldiginda tetiklenir: (dusman, kaybedilen can). Can barlari bunu dinler.</summary>
+    public static event System.Action<EnemyHitReceiver, float> AnyDamaged;
+
+    private float barLocalTop = 2f;
+
+    /// <summary>Can barinin dunya pozisyonu (dusmanin basinin ustu).</summary>
+    public Vector3 HealthBarWorldPosition
+    {
+        get
+        {
+            if (healthBarAnchor != null) return healthBarAnchor.position + Vector3.up * healthBarExtraHeight;
+            return transform.position + Vector3.up * (barLocalTop + healthBarExtraHeight);
+        }
+    }
 
     // --- Cache ---
     private Animator animator;
@@ -145,12 +191,38 @@ public AudioClip[] hitSfxList;
 
         CacheTriggers();
         CacheRenderers();
+        CacheBarHeight();
 
         if (visualRoot != null)
         {
             baseLocalPos = visualRoot.localPosition;
             baseLocalRot = visualRoot.localRotation;
         }
+    }
+
+    private void CacheBarHeight()
+    {
+        bool found = false;
+        Bounds b = new Bounds(transform.position, Vector3.zero);
+
+        foreach (Collider c in GetComponentsInChildren<Collider>())
+        {
+            if (c.isTrigger) continue;
+            if (!found) { b = c.bounds; found = true; }
+            else b.Encapsulate(c.bounds);
+        }
+
+        if (!found)
+        {
+            foreach (Renderer r in GetComponentsInChildren<Renderer>())
+            {
+                if (!(r is MeshRenderer) && !(r is SkinnedMeshRenderer)) continue;
+                if (!found) { b = r.bounds; found = true; }
+                else b.Encapsulate(r.bounds);
+            }
+        }
+
+        barLocalTop = found ? Mathf.Max(0.5f, b.max.y - transform.position.y) : 2f;
     }
 
     private void CacheTriggers()
@@ -192,17 +264,32 @@ public AudioClip[] hitSfxList;
 
         // Hasar (dengesizken daha fazla)
         float damage = hit.damage * (isStaggered ? staggerDamageMultiplier : 1f);
-        currentHealth -= damage;
+        float healthBefore = currentHealth;
+        currentHealth = Mathf.Max(0f, currentHealth - damage);
         lastHitTime = Time.time;
+        
+        // Can barı için olay tetikleyicisi
+        AnyDamaged?.Invoke(this, healthBefore - currentHealth);
 
-        // Efektler: temas aninda hemen
-        SpawnVfx(hit);
-        // Eski satırı sil ve bunu ekle:
-    PlaySmartHitSfx(hit.point);
+        bool dies = currentHealth <= 0f;
+
+        // Efektler ve Ölüm kontrolü
+        if (dies)
+        {
+            SpawnDeathVfx(hit);
+            Die();
+        }
+        else
+        {
+            SpawnHitVfx(hit);
+        }
+
+        // Akıllı ses çalma
+        PlaySmartHitSfx(hit.point);
 
         // Denge (poise)
         bool staggeredNow = false;
-        if (!isStaggered)
+        if (!isStaggered && !dies)
         {
             currentPoise -= hit.poiseDamage;
             if (currentPoise <= 0f)
@@ -211,9 +298,6 @@ public AudioClip[] hitSfxList;
                 staggeredNow = true;
             }
         }
-
-        bool dies = currentHealth <= 0f;
-        if (dies) Die();
 
         // Gorsel tepkiler
         flashTimer = flashDuration;
@@ -284,7 +368,6 @@ public AudioClip[] hitSfxList;
 
         if (agent == null && body != null && !body.isKinematic)
         {
-            // Fizik motoru kendi surtunmesiyle yavaslatir (Rigidbody drag ~5-8 iyi)
             body.AddForce(v + Vector3.up * (v.magnitude * rigidbodyLift), ForceMode.VelocityChange);
             rigidbodyBusyTimer = 0.4f;
         }
@@ -305,11 +388,11 @@ public AudioClip[] hitSfxList;
         Vector3 delta = knockbackVelocity * Time.deltaTime;
 
         if (agent != null && agent.enabled && agent.isOnNavMesh)
-            agent.Move(delta);                       // NavMesh kenarlarini asmaz
+            agent.Move(delta);                       
         else if (characterController != null && characterController.enabled)
-            characterController.Move(delta);         // Collider'lara carpar
+            characterController.Move(delta);         
         else
-            transform.position += delta;             // Yedek: duz tasima
+            transform.position += delta;             
 
         knockbackVelocity *= Mathf.Exp(-knockbackDrag * Time.deltaTime);
     }
@@ -332,7 +415,6 @@ public AudioClip[] hitSfxList;
         }
     }
 
-    // Busy iken NavMeshAgent'i durdur, bitince eski haline dondur
     private void UpdateAgentState()
     {
         bool busy = IsBusy;
@@ -371,7 +453,7 @@ public AudioClip[] hitSfxList;
 
             if (flashTimer <= 0f)
             {
-                ft.renderer.SetPropertyBlock(null); // orijinal materyale don
+                ft.renderer.SetPropertyBlock(null); 
             }
             else
             {
@@ -396,7 +478,6 @@ public AudioClip[] hitSfxList;
         flinchOffset = dirLocal * flinchDistance * scale;
         flinchOffsetVelocity = Vector3.zero;
 
-        // Govde vurus yonune dogru yatsin: eksen = yukari x yon
         Vector3 axisWorld = Vector3.Cross(Vector3.up, dirWorld);
         tiltAxis = parent != null ? parent.InverseTransformDirection(axisWorld) : axisWorld;
         tiltAngle = flinchTiltAngle * scale;
@@ -409,7 +490,6 @@ public AudioClip[] hitSfxList;
 
         bool frozen = hitStopTimer > 0f;
 
-        // Hit stop sirasinda tepkiyi tepe noktada tut, bitince toparlansin
         if (!frozen)
         {
             flinchOffset = Vector3.SmoothDamp(flinchOffset, Vector3.zero, ref flinchOffsetVelocity, flinchRecoverTime);
@@ -439,15 +519,6 @@ public AudioClip[] hitSfxList;
     // ------------------------------------------------------------
     //  YARDIMCILAR
     // ------------------------------------------------------------
-    private void SpawnVfx(HitInfo hit)
-    {
-        if (hitVfxPrefab == null) return;
-
-        Quaternion rot = hit.normal.sqrMagnitude > 0.001f ? Quaternion.LookRotation(hit.normal) : Quaternion.identity;
-        GameObject fx = Instantiate(hitVfxPrefab, hit.point, rot);
-        Destroy(fx, vfxLifetime);
-    }
-
     private void TriggerAnimator(string triggerName)
     {
         if (animator == null || string.IsNullOrEmpty(triggerName)) return;
@@ -494,9 +565,45 @@ public AudioClip[] hitSfxList;
         }
 
         if (clipToPlay != null)
-{
-    // PlayClipAtPoint yerine ses seviyesini ayarlayarak çalıyoruz:
-    AudioSource.PlayClipAtPoint(clipToPlay, point, sfxVolume);
-}
+        {
+            AudioSource.PlayClipAtPoint(clipToPlay, point, sfxVolume);
+        }
+    }
+
+    private void SpawnHitVfx(HitInfo hit)
+    {
+        if (hitVfxEntries == null || hitVfxEntries.Length == 0) return;
+
+        // Listeden rastgele bir vuruş efekti seç
+        int randIdx = Random.Range(0, hitVfxEntries.Length);
+        HitVfxEntry entry = hitVfxEntries[randIdx];
+        if (entry.prefab == null) return;
+
+        Quaternion rot = hit.normal.sqrMagnitude > 0.001f ? Quaternion.LookRotation(hit.normal) : Quaternion.identity;
+        GameObject fx = Instantiate(entry.prefab, hit.point, rot);
+        
+        // O efekte özel ayarlanmış boyutu uygula
+        fx.transform.localScale = Vector3.one * entry.scale;
+
+        Destroy(fx, vfxLifetime);
+    }
+
+    private void SpawnDeathVfx(HitInfo hit)
+    {
+        // 1. Ölüm Patlama Efekti (VFX)
+        if (deathVfxPrefab != null)
+        {
+            Quaternion rot = hit.normal.sqrMagnitude > 0.001f ? Quaternion.LookRotation(hit.normal) : Quaternion.identity;
+            GameObject fx = Instantiate(deathVfxPrefab, hit.point, rot);
+            fx.transform.localScale = Vector3.one * deathVfxScale;
+
+            Destroy(fx, Mathf.Max(vfxLifetime, 3f));
+        }
+
+        // 2. Ölüm Patlama Sesi (SFX) <-- YENİ EKLENEN KISIM
+        if (deathSfx != null)
+        {
+            AudioSource.PlayClipAtPoint(deathSfx, hit.point, deathSfxVolume);
+        }
     }
 }
