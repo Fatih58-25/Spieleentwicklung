@@ -1,0 +1,11 @@
+Model Information:
+* title:	scan of a country side road in korea
+* source:	https://sketchfab.com/3d-models/scan-of-a-country-side-road-in-korea-eb80b43d12134f0f86536d458022c491
+* author:	Mongda (https://sketchfab.com/Mongda)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "scan of a country side road in korea" (https://sketchfab.com/3d-models/scan-of-a-country-side-road-in-korea-eb80b43d12134f0f86536d458022c491) by Mongda (https://sketchfab.com/Mongda) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

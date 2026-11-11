@@ -1,0 +1,11 @@
+Model Information:
+* title:	Road
+* source:	https://sketchfab.com/3d-models/road-4eae882d72c24a789d83655f952008ea
+* author:	Manicartes (https://sketchfab.com/jajakronus)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Road" (https://sketchfab.com/3d-models/road-4eae882d72c24a789d83655f952008ea) by Manicartes (https://sketchfab.com/jajakronus) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

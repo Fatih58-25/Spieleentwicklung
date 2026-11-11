@@ -1,0 +1,11 @@
+Model Information:
+* title:	Murals of Clarion Alley, San Francisco
+* source:	https://sketchfab.com/3d-models/murals-of-clarion-alley-san-francisco-a2a2c56b876249ea96372a6c78a529bb
+* author:	emm (https://sketchfab.com/edemaistre)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Murals of Clarion Alley, San Francisco" (https://sketchfab.com/3d-models/murals-of-clarion-alley-san-francisco-a2a2c56b876249ea96372a6c78a529bb) by emm (https://sketchfab.com/edemaistre) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

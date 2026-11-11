@@ -1,0 +1,11 @@
+Model Information:
+* title:	General roads in Japan
+* source:	https://sketchfab.com/3d-models/general-roads-in-japan-f381cbcc2ef34a6dad421603305b409e
+* author:	Stnk (https://sketchfab.com/Seiyatnk)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "General roads in Japan" (https://sketchfab.com/3d-models/general-roads-in-japan-f381cbcc2ef34a6dad421603305b409e) by Stnk (https://sketchfab.com/Seiyatnk) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

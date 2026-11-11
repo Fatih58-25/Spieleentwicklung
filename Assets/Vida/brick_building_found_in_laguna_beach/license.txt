@@ -1,0 +1,11 @@
+Model Information:
+* title:	Brick Building found in Laguna Beach
+* source:	https://sketchfab.com/3d-models/brick-building-found-in-laguna-beach-786826dc7e2b4cf58d6d3ef3fb53b8f8
+* author:	jtressle (https://sketchfab.com/jtressle)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Brick Building found in Laguna Beach" (https://sketchfab.com/3d-models/brick-building-found-in-laguna-beach-786826dc7e2b4cf58d6d3ef3fb53b8f8) by jtressle (https://sketchfab.com/jtressle) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
