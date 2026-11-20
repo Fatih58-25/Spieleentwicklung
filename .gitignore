@@ -26,3 +26,4 @@
 # OS generated
 .DS_Store
 Thumbs.db
+*.unitypackage
