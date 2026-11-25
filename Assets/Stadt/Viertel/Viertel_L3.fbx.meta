@@ -1,0 +1,465 @@
+fileFormatVersion: 2
+guid: a75f56bc1b2a99d4e9dfff46c07ae79a
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Antenne
+    second: {fileID: 2100000, guid: 17ac838f5749e5a4da8a35761898dd70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Asphalt
+    second: {fileID: 2100000, guid: c359e82e0f4cd914bae132e6f25af192, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrom
+    second: {fileID: 2100000, guid: 2121cd795ce185040a4b69ce2f3a2dc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dach
+    second: {fileID: 2100000, guid: 7e15875dd2db9c44ba2c7efa42e016b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_10
+    second: {fileID: 2100000, guid: f39be221f94993045adb6793ea628c63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_1_mittel
+    second: {fileID: 2100000, guid: 7d0d38d398a5c2f4fbbc6573f1adb70b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_1_viel
+    second: {fileID: 2100000, guid: ba73b09e8262d3b44b81e6d3718ebffc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_1_wenig
+    second: {fileID: 2100000, guid: 9977b56a021798845aa0051e301ecde5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_2_mittel
+    second: {fileID: 2100000, guid: 674dccdc9aa66a648befd0016dec81a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_2_wenig
+    second: {fileID: 2100000, guid: ad3f7d42b757d2b4790819e1a5f618fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_3_mittel
+    second: {fileID: 2100000, guid: c79e37fc4c47be142b33893074f68bba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_3_viel
+    second: {fileID: 2100000, guid: cca89e1bc95785e4fa7b7e105a934938, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_3_wenig
+    second: {fileID: 2100000, guid: 771cfa3b0a9287e41aac76ecf299f608, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_4_mittel
+    second: {fileID: 2100000, guid: d8a5efb3efcc2704584f53f953736f37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_4_viel
+    second: {fileID: 2100000, guid: 08e478e41ee3ca944be603161e100759, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_4_wenig
+    second: {fileID: 2100000, guid: 3b7ce1f128a0964439451a10f8ef12e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_6_mittel
+    second: {fileID: 2100000, guid: aced5ea14404d364ba5095bff4163d57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_6_viel
+    second: {fileID: 2100000, guid: 86afc9d8a01974e4b80abc335030879b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_6_wenig
+    second: {fileID: 2100000, guid: e29824efb0d4cb048934eeb7cf143aa3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_7_mittel
+    second: {fileID: 2100000, guid: 7df864682e84e424a82655fc43c6c620, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_7_viel
+    second: {fileID: 2100000, guid: 6bb0b92f4c085b044a659edea0bd7b11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_7_wenig
+    second: {fileID: 2100000, guid: 7d6c74b7da63ae6439d024a80a2db912, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fassade_9
+    second: {fileID: 2100000, guid: 1cad72c2d5301e24b9401b386fed56d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_F18A
+    second: {fileID: 2100000, guid: fcfa6c215b4d28f4ab4d20040426c5b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_F19A
+    second: {fileID: 2100000, guid: 2706678f2a7e157498def02f0853082a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_F19A_b
+    second: {fileID: 2100000, guid: 9c9b7a3ee2eca2e48a56305d4a25abcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_F2
+    second: {fileID: 2100000, guid: d4c95ef3c7e64434faee840618eda8b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_F20A
+    second: {fileID: 2100000, guid: fc6e5fd72b4f7c14a936ab393df4cbfe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_F3
+    second: {fileID: 2100000, guid: 8bfea2666d0e2e24ca7862ccd177ac54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_F5
+    second: {fileID: 2100000, guid: 68a08c78f46511844a212f5d8ae3a788, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_M50A
+    second: {fileID: 2100000, guid: 5024dad8f59ffe34cbf3494298302a34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_P15A
+    second: {fileID: 2100000, guid: ee1f9eda8f2e768499014313b1bdb363, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_P15A_b
+    second: {fileID: 2100000, guid: cf5772066804e194ba90ffe527974d9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_P16A
+    second: {fileID: 2100000, guid: 8e3b8bde91c237b40b93aec17b4be32e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_P16A_b
+    second: {fileID: 2100000, guid: 33e7a4ae763525945b6a8996ed041f05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foto_P17A
+    second: {fileID: 2100000, guid: 1637272faf971f2439c9599caa24eaa4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gehweg
+    second: {fileID: 2100000, guid: 3ae712abf52bce14784e1a28d108b074, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold
+    second: {fileID: 2100000, guid: 9f011263884b4a34b801cc950a66e608, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Bronze_0
+    second: {fileID: 2100000, guid: 963072d7eeea60f4aab20531109c0f12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Bronze_1
+    second: {fileID: 2100000, guid: f1e51a0b29353c640a135c8c3c246aad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Bronze_2
+    second: {fileID: 2100000, guid: 29c9c23e7caae4049bc9a76185abe884, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Bronze_3
+    second: {fileID: 2100000, guid: 9c5736c7e29771440bc82769d61e48c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Bronze_4
+    second: {fileID: 2100000, guid: 20d9d42a068b279479ea70112cfc4443, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Bronze_5
+    second: {fileID: 2100000, guid: f62e134680b0a694ea0b9f863fba001a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Dunkel_0
+    second: {fileID: 2100000, guid: 1775215fabc1e8e449456098cb60e47e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Dunkel_1
+    second: {fileID: 2100000, guid: a5e59817570b04346b4c4a599feedb28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Dunkel_2
+    second: {fileID: 2100000, guid: 3b0a8a1ee4ab29a44bc68af9756e1fdc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Dunkel_3
+    second: {fileID: 2100000, guid: 934dfefb49e6a9942947c9cc8a43becf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Dunkel_4
+    second: {fileID: 2100000, guid: 8d27e7e98aea16c4bb755e03f1d8868d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Dunkel_5
+    second: {fileID: 2100000, guid: 8c88364ddf1b16b49b4ec8aa12901b5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Perl_0
+    second: {fileID: 2100000, guid: d7c7c07066328d14c8a4cdba7bad2584, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Perl_1
+    second: {fileID: 2100000, guid: 12885b39a6ba29c4b992cb4ebf012934, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Perl_2
+    second: {fileID: 2100000, guid: 4bc9d6cf7eab8e448baf09b0ff60c1e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Perl_3
+    second: {fileID: 2100000, guid: 218ebc2d304c26748a8d4355012e9905, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Perl_4
+    second: {fileID: 2100000, guid: 574f8e7f555950e4cbd4d6d8f8e7a782, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haut_Perl_5
+    second: {fileID: 2100000, guid: 8f403c11dcb3139439e0498313af8d04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kristall
+    second: {fileID: 2100000, guid: 3ebf529732157a24c88cc61d392a4d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kuppelglas
+    second: {fileID: 2100000, guid: 767d3a512e4d5d643a65e86ad86087df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LED_Cyan
+    second: {fileID: 2100000, guid: 8a9e0282bd69d0b4686944b25416bed9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LED_Weiss
+    second: {fileID: 2100000, guid: 514fc5a4c911b61469b1b855abb04c56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lack_Perlmutt
+    second: {fileID: 2100000, guid: a2331fa4f0222064eb659c52af5f59a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Laterne_Licht
+    second: {fileID: 2100000, guid: 66e12693b6091ab44bc3429286e1c586, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Markierung_gelb
+    second: {fileID: 2100000, guid: da180e82534846f46a2684791e1fa53c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Markierung_weiss
+    second: {fileID: 2100000, guid: aed00d41c040a354aaba7de9dfe7805e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Maschine_bronze
+    second: {fileID: 2100000, guid: 12ccedcac4897ce459207497e58f3025, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mast
+    second: {fileID: 2100000, guid: 5f8330a57937d8d49966356b4efda41a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Perlweiss
+    second: {fileID: 2100000, guid: e4b3562e3638a3e4199ca1a2b9f718b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rippe
+    second: {fileID: 2100000, guid: f858ca5316acd7d4abe739cee5c65e38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sockel_mittel
+    second: {fileID: 2100000, guid: 1198e0110d7c5b247a8432f7e463d112, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Technik
+    second: {fileID: 2100000, guid: 777e43a2cfd47ac43b28e103cdc0460a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Warnlicht_rot
+    second: {fileID: 2100000, guid: 4ec99709edfa4bd4c88034798651d34e, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 1
+    materialSearch: 2
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 2
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
