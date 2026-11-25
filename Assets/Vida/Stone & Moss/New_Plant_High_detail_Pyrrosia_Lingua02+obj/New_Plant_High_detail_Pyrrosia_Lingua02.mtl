@@ -1,0 +1,49 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 21.06.2022 12:21:15
+
+newmtl vray_Material__4
+	Ns 32.1429
+	Ni 1.5200
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5000 0.5000 0.5000
+	Ks 0.6600 0.6600 0.6600
+	Ke 0.0000 0.0000 0.0000
+	map_Ka map\Pyrrosia_Lingua_Trunk.jpeg
+	map_Kd map\Pyrrosia_Lingua_Trunk.jpeg
+	map_Ks map\Pyrrosia_Lingua_Trunk_Gloss.jpeg
+	map_bump map\Pyrrosia_Lingua_Trunk_Normal.jpeg
+	bump map\Pyrrosia_Lingua_Trunk_Normal.jpeg
+
+newmtl vray_Material__5
+	Ns 40.7143
+	Ni 1.5200
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5000 0.5000 0.5000
+	Ks 0.6600 0.6600 0.6600
+	Ke 0.0000 0.0000 0.0000
+	map_Ka map\Pyrrosia_Lingua_Leaf.jpeg
+	map_Kd map\Pyrrosia_Lingua_Leaf.jpeg
+	map_Ks map\Pyrrosia_Lingua_Leaf_Gloss.jpeg
+	map_d map\Pyrrosia_Lingua_Leaf_Opacity.jpeg
+	map_bump map\Pyrrosia_Lingua_Leaf_Normal.jpeg
+	bump map\Pyrrosia_Lingua_Leaf_Normal.jpeg
+
+newmtl vray_Material__13
+	Ns 71.4286
+	Ni 1.5200
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.7843 0.7843 0.7843
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
