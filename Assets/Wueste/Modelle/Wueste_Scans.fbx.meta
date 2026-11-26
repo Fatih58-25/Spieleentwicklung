@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: c3066fc60fb14754499f158936edc01a
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bark_debris_01
+    second: {fileID: 2100000, guid: 5dd739c7ddbded246893a21674558abd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boulder_01
+    second: {fileID: 2100000, guid: 14601f40033555e41940defc283c5ac3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cheiridopsis_succulent
+    second: {fileID: 2100000, guid: 8a43cf7208a02e342b8a755d3972587e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cheiridopsis_succulent_flower
+    second: {fileID: 2100000, guid: e857af323195d2b4bb9be2c4e1783a1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crystalline_iceplant
+    second: {fileID: 2100000, guid: c90e57ff8a4d764468965cf5fe2a739a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dead_quiver_branch_01
+    second: {fileID: 2100000, guid: b88652f8f14d5854b9b1aceff9732b67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dead_quiver_branch_02
+    second: {fileID: 2100000, guid: e08ffcb754cc7fb449cedc446790550c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dead_quiver_trunk
+    second: {fileID: 2100000, guid: 5980e37978f21cd4e9ee5285e1cf4784, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dry_branches_medium_01
+    second: {fileID: 2100000, guid: ecb7a7985467d534fa460a513a9d5af3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: namaqualand_boulder_02
+    second: {fileID: 2100000, guid: 60ed1fc108a6db1429925159ac36abf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: namaqualand_boulder_03
+    second: {fileID: 2100000, guid: 01471c6c65d9f4b49a7f16548d5470b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: namaqualand_boulder_04
+    second: {fileID: 2100000, guid: 7721bd58eaec42c47842d0c6e9193543, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: namaqualand_boulder_05
+    second: {fileID: 2100000, guid: 4f485073e4663ec4495a39411e76223b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: namaqualand_boulder_06
+    second: {fileID: 2100000, guid: 543e2231b73a74048a20d2f0dde9e3fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: namaqualand_boulders_01
+    second: {fileID: 2100000, guid: 2172a3c63b0c0ee41912ac9a0cb2d0c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: namaqualand_rocks_01
+    second: {fileID: 2100000, guid: 948b82b52bf73f543a2d991cd2df460b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: namaqualand_stones_01
+    second: {fileID: 2100000, guid: 949b9b59d8517404fb0fe38969494138, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: othonna_cerarioides
+    second: {fileID: 2100000, guid: b5782d0ddbe139d4ab04b432c3657171, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: othonna_cerarioides_leaves
+    second: {fileID: 2100000, guid: 56d6be78134f375498665675176ac3d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: quiver_tree_01_leaf
+    second: {fileID: 2100000, guid: 42d83338cad3e3a48b2b6620905557d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: quiver_tree_01_trunk
+    second: {fileID: 2100000, guid: ee663478efcec78499b64712063da66a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: quiver_tree_02
+    second: {fileID: 2100000, guid: 58e01cbc6ca51ce40a5ba1748bdde372, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock_07
+    second: {fileID: 2100000, guid: af4dd6e79207f754aae572a7f6ecff79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock_09
+    second: {fileID: 2100000, guid: c779a1a0198e43f41a4c735b1e211d56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: searsia_burchellii
+    second: {fileID: 2100000, guid: b9247e5ee8b72ec4dba5a8c58ab1c52b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: searsia_burchellii_twigs
+    second: {fileID: 2100000, guid: ca4fc17bd6faed54d80ec6b020dc9dd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: searsia_lucida
+    second: {fileID: 2100000, guid: ccae233c2f4100c4b88613f4f40498cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: searsia_lucida_leaves
+    second: {fileID: 2100000, guid: 0d8c4069ac2c00a47baa4243d601256e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: searsia_lucida_twigs
+    second: {fileID: 2100000, guid: 7bcdf1c6763605f4ebebbb7e7f2e1af8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stone_01
+    second: {fileID: 2100000, guid: 68907eb9e7e9b864ab277abd5d0cd964, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wild_rooibos_bush
+    second: {fileID: 2100000, guid: 87c039c61ec3afe489627036889b686b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wild_rooibos_bush_leaves
+    second: {fileID: 2100000, guid: fb43c3b9f7e01674e8956e9d35439906, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wild_rooibos_bush_twigs
+    second: {fileID: 2100000, guid: c8cd24b3c48edcf4da841661012a36cc, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 1
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 2
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 2
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

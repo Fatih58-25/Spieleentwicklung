@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Wueste_Gelaende
+  m_Shader: {fileID: 4800000, guid: 839560c111e37ab439363158f2dd36fb, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ClayMap:
+        m_Texture: {fileID: 2800000, guid: 2f8631e7225392e45b6589fc48a38827, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ClayNormal:
+        m_Texture: {fileID: 2800000, guid: 1d2cb3a3d2bae644688a83eac980db4a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GravelMap:
+        m_Texture: {fileID: 2800000, guid: 2b0aaf6075b95dc4b90c74f3a2aa82b1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GravelNormal:
+        m_Texture: {fileID: 2800000, guid: 981e26058f41dab4ea6d63fce9e5aa31, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MacroMap:
+        m_Texture: {fileID: 2800000, guid: 455d5aca99bff3f4c800bdf32ebbfc5a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RippleNormal:
+        m_Texture: {fileID: 2800000, guid: a8aef656a70e2ef43a2796caf74e14bd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RockMap:
+        m_Texture: {fileID: 2800000, guid: 9b356b95aa8a79e48a0a409480291cfd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RockNormal:
+        m_Texture: {fileID: 2800000, guid: 63ec9a8f424ecad4daa4049dac2aa677, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SandMap:
+        m_Texture: {fileID: 2800000, guid: 8fa391f49bea3864b99b7c10d783df49, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SandNormal:
+        m_Texture: {fileID: 2800000, guid: e2ca375d6fb4f5740b46291648d4e872, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SplatMap:
+        m_Texture: {fileID: 2800000, guid: d24cef13ddfabbb4c83f30c70676a6ff, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ClayTile: 4
+    - _GravelTile: 2.5
+    - _RippleStrength: 0.7
+    - _RippleTile: 4
+    - _RockTile: 2.6
+    - _RockTile2: 9
+    - _SandTile: 3
+    - _SandTile2: 7.7
+    - _SmoothClay: 0.05
+    - _SmoothGravel: 0.08
+    - _SmoothRock: 0.08
+    - _SmoothSand: 0.04
+    - _WindAngle: -2.6529005
+    m_Colors:
+    - _ClayTint: {r: 1, g: 0.82, b: 0.62, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
