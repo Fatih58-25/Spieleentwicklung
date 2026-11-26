@@ -56,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Gravity & Jump")]
     public float gravity = -20f;
     public float jumpHeight = 1.5f;
+    [Tooltip("Wie stark der Spieler auf Haengen am Boden gehalten wird. Hoeher = weniger Huepfen bergab. 0 = altes Verhalten.")]
+    public float bodenHaftung = 0.8f;
     private float verticalVelocity;
 
     [Header("Combo Settings")]
@@ -198,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (controller.isGrounded)
         {
-            verticalVelocity = -2f;
+            verticalVelocity = -Mathf.Max(2f, currentSpeed * bodenHaftung);
 
             if (jumpPressed)
             {

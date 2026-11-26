@@ -11,6 +11,8 @@ public class TPSCamera : MonoBehaviour
     public float distance = 3.5f;
     public float height = 1.8f;
     public float cameraXOffset = 0.6f;
+    [Tooltip("Daempft nur das Auf und Ab der Kamera (Huegel, Treppen). 0 = aus, 0.05 bis 0.15 ist ueblich.")]
+    public float verticalSmoothTime = 0.08f;
 
     [Header("Collision Settings (Duvar Engelleyici)")]
     public bool enableCollision = true;
@@ -61,6 +63,11 @@ public class TPSCamera : MonoBehaviour
 
     private Camera cam;
     private Vector3 lockUIVelocity = Vector3.zero;
+    private float smoothedPivotY;
+    private float pivotYVelocity;
+    private bool pivotInit;
+    private Transform eigenerKoerper;
+    private static readonly RaycastHit[] castPuffer = new RaycastHit[24];
 
     public bool IsLockedOn => isLockedOn;
     public Transform LockedTarget => lockedTarget;
@@ -76,6 +83,8 @@ public class TPSCamera : MonoBehaviour
         if (target)
         {
             currentRotationY = target.eulerAngles.y;
+            var cc = target.GetComponentInParent<CharacterController>();
+            eigenerKoerper = cc != null ? cc.transform : target;
         }
 
         currentDistance = distance;
@@ -150,6 +159,14 @@ public class TPSCamera : MonoBehaviour
         // 1. ROTASYON + PIVOT
         Quaternion rotation = Quaternion.Euler(currentRotationX, currentRotationY, 0);
         Vector3 pivot = target.position + Vector3.up * height;
+        if (!pivotInit)
+        {
+            smoothedPivotY = pivot.y;
+            pivotInit = true;
+        }
+        if (verticalSmoothTime > 0.0001f) smoothedPivotY = Mathf.SmoothDamp(smoothedPivotY, pivot.y, ref pivotYVelocity, verticalSmoothTime);
+        else smoothedPivotY = pivot.y;
+        pivot.y = smoothedPivotY;
 
         // 2. DUVAR CARPISMA HESABI
         float desiredShoulder = cameraXOffset;
@@ -173,7 +190,7 @@ public class TPSCamera : MonoBehaviour
         if (enableCollision)
         {
             RaycastHit safetyHit;
-            if (Physics.Linecast(pivot, position, out safetyHit, collisionLayers, QueryTriggerInteraction.Ignore))
+            if (CastGefiltert(pivot, 0f, (position - pivot).normalized, Vector3.Distance(pivot, position), out safetyHit))
             {
                 position = safetyHit.point + safetyHit.normal * cameraRadius;
             }
@@ -230,7 +247,7 @@ public class TPSCamera : MonoBehaviour
             float sign = Mathf.Sign(cameraXOffset);
             Vector3 sideDir = rotation * Vector3.right * sign;
 
-            if (Physics.SphereCast(pivot, cameraRadius, sideDir, out hit, absX + collisionBuffer, collisionLayers, QueryTriggerInteraction.Ignore))
+            if (CastGefiltert(pivot, cameraRadius, sideDir, absX + collisionBuffer, out hit))
             {
                 shoulder = sign * Mathf.Max(hit.distance - collisionBuffer, 0f);
             }
@@ -240,10 +257,32 @@ public class TPSCamera : MonoBehaviour
         Vector3 shoulderPivot = pivot + rotation * Vector3.right * shoulder;
         Vector3 backDir = rotation * Vector3.back;
 
-        if (Physics.SphereCast(shoulderPivot, cameraRadius, backDir, out hit, distance + collisionBuffer, collisionLayers, QueryTriggerInteraction.Ignore))
+        if (CastGefiltert(shoulderPivot, cameraRadius, backDir, distance + collisionBuffer, out hit))
         {
             dist = Mathf.Clamp(hit.distance - collisionBuffer, minDistance, distance);
         }
+    }
+
+    private bool CastGefiltert(Vector3 start, float radius, Vector3 richtung, float entfernung, out RaycastHit treffer)
+    {
+        int n = radius > 0f
+            ? Physics.SphereCastNonAlloc(start, radius, richtung, castPuffer, entfernung, collisionLayers, QueryTriggerInteraction.Ignore)
+            : Physics.RaycastNonAlloc(start, richtung, castPuffer, entfernung, collisionLayers, QueryTriggerInteraction.Ignore);
+        treffer = default(RaycastHit);
+        float nah = float.MaxValue;
+        bool gefunden = false;
+        for (int i = 0; i < n; i++)
+        {
+            RaycastHit h = castPuffer[i];
+            if (eigenerKoerper != null && h.transform.IsChildOf(eigenerKoerper)) continue;
+            if (h.distance < nah)
+            {
+                nah = h.distance;
+                treffer = h;
+                gefunden = true;
+            }
+        }
+        return gefunden;
     }
 
     // Hedef daha yakinsa (duvar yaklasti) aninda atla, daha uzaksa yumusakca don

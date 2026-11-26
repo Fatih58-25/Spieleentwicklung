@@ -4,3 +4,9 @@ Assets/Biom/**/*.fbx filter=lfs diff=lfs merge=lfs -text
 Assets/Biom/**/*.png filter=lfs diff=lfs merge=lfs -text
 Assets/Biom/**/*.jpg filter=lfs diff=lfs merge=lfs -text
 Assets/Biom/**/*.hdr filter=lfs diff=lfs merge=lfs -text
+Assets/Altar_Ruins_FREE/**/*.png filter=lfs diff=lfs merge=lfs -text
+Assets/Altar_Ruins_FREE/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+Assets/Altar_Ruins_FREE/**/*.tga filter=lfs diff=lfs merge=lfs -text
+Assets/Altar_Ruins_FREE/**/*.exr filter=lfs diff=lfs merge=lfs -text
+Assets/Altar_Ruins_FREE/**/*.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/Altar_Ruins_FREE/**/*.FBX filter=lfs diff=lfs merge=lfs -text
