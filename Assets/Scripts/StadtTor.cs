@@ -9,8 +9,13 @@ public class StadtTor : InteraktionsZone
     public bool schieben;
     public float winkel = 100f;
     public bool umkehren;
-    public float dauer = 3.5f;
+    public float dauer = 7f;
     public Collider[] sperrenNachOeffnen;
+    public StadtTor[] mitOeffnen;
+
+    [Header("Rumpeln")]
+    public float ruetteln = 0.03f;
+    public float ruettelReichweite = 80f;
 
     [Header("Texte")]
     public string hinweis = "[E] Tor öffnen";
@@ -23,6 +28,14 @@ public class StadtTor : InteraktionsZone
 
     bool offen;
     bool beschaeftigt;
+    bool vorbereitet;
+    Vector3[] start;
+    Quaternion[] startRot;
+    Vector3[] richtung;
+    Vector3[] scharnier;
+    Vector3[] startMitte;
+    float[] weg;
+    float[] vorzeichen;
 
     protected override string HinweisText()
     {
@@ -47,6 +60,20 @@ public class StadtTor : InteraktionsZone
             if (verschlossenSound != null) AudioSource.PlayClipAtPoint(verschlossenSound, transform.position);
             return;
         }
+        Meldung(offenMeldung, 3f);
+        Starten();
+        if (mitOeffnen != null)
+        {
+            foreach (var t in mitOeffnen)
+            {
+                if (t != null && t != this) t.Starten();
+            }
+        }
+    }
+
+    public void Starten()
+    {
+        if (offen || beschaeftigt) return;
         StartCoroutine(Oeffnen());
     }
 
@@ -69,20 +96,17 @@ public class StadtTor : InteraktionsZone
         return new Bounds(t.position, Vector3.one);
     }
 
-    IEnumerator Oeffnen()
+    public void Vorbereiten()
     {
-        beschaeftigt = true;
-        Meldung(offenMeldung, 3f);
-        if (oeffnenSound != null) AudioSource.PlayClipAtPoint(oeffnenSound, transform.position);
-
+        if (vorbereitet || fluegel == null || fluegel.Length == 0) return;
         int n = fluegel.Length;
-        var start = new Vector3[n];
-        var startRot = new Quaternion[n];
-        var richtung = new Vector3[n];
-        var scharnier = new Vector3[n];
-        var weg = new float[n];
-        var vorzeichen = new float[n];
-
+        start = new Vector3[n];
+        startRot = new Quaternion[n];
+        richtung = new Vector3[n];
+        scharnier = new Vector3[n];
+        startMitte = new Vector3[n];
+        weg = new float[n];
+        vorzeichen = new float[n];
         Vector3 mitte = Vector3.zero;
         var grenzen = new Bounds[n];
         for (int i = 0; i < n; i++)
@@ -91,7 +115,6 @@ public class StadtTor : InteraktionsZone
             mitte += grenzen[i].center;
         }
         mitte /= n;
-
         Vector3 bezug = Vector3.zero;
         for (int i = 0; i < n; i++)
         {
@@ -113,33 +136,69 @@ public class StadtTor : InteraktionsZone
             scharnier[i] = grenzen[i].center + d * halbe;
             scharnier[i].y = grenzen[i].center.y;
             start[i] = fluegel[i].position;
+            startMitte[i] = grenzen[i].center;
             startRot[i] = fluegel[i].rotation;
         }
+        vorbereitet = true;
+    }
 
+    public void PoseSetzen(float p)
+    {
+        Vorbereiten();
+        if (!vorbereitet) return;
+        float weich = p * p * (3f - 2f * p);
+        float faktor = umkehren ? -1f : 1f;
+        for (int i = 0; i < fluegel.Length; i++)
+        {
+            if (schieben)
+            {
+                fluegel[i].position = start[i] + richtung[i] * weg[i] * weich;
+            }
+            else
+            {
+                float w = winkel * weich * vorzeichen[i] * faktor;
+                var q = Quaternion.AngleAxis(w, Vector3.up);
+                fluegel[i].position = scharnier[i] + q * (start[i] - scharnier[i]);
+                fluegel[i].rotation = q * startRot[i];
+            }
+        }
+    }
+
+    public void NachAussenOeffnen(Vector3 stadtMitte)
+    {
+        Vorbereiten();
+        if (!vorbereitet || schieben) return;
+        Vector3 torMitte = Vector3.zero;
+        for (int i = 0; i < fluegel.Length; i++) torMitte += startMitte[i];
+        torMitte /= fluegel.Length;
+        Vector3 nachAussen = torMitte - stadtMitte;
+        nachAussen.y = 0f;
+        Vector3 bewegung = Vector3.zero;
+        for (int i = 0; i < fluegel.Length; i++)
+        {
+            var q = Quaternion.AngleAxis(winkel * vorzeichen[i], Vector3.up);
+            Vector3 neu = scharnier[i] + q * (startMitte[i] - scharnier[i]);
+            bewegung += neu - startMitte[i];
+        }
+        umkehren = Vector3.Dot(bewegung, nachAussen) < 0f;
+    }
+
+    IEnumerator Oeffnen()
+    {
+        beschaeftigt = true;
+        if (oeffnenSound != null) AudioSource.PlayClipAtPoint(oeffnenSound, transform.position);
+        Vorbereiten();
+        TPSCamera kamera = null;
+        if (ruetteln > 0f) kamera = FindFirstObjectByType<TPSCamera>();
         float zeit = 0f;
-        float richtungsFaktor = umkehren ? -1f : 1f;
         while (zeit < dauer)
         {
             zeit += Time.deltaTime;
-            float p = Mathf.Clamp01(zeit / dauer);
-            float weich = p * p * (3f - 2f * p);
-            for (int i = 0; i < n; i++)
-            {
-                if (schieben)
-                {
-                    fluegel[i].position = start[i] + richtung[i] * weg[i] * weich;
-                }
-                else
-                {
-                    float w = winkel * weich * vorzeichen[i] * richtungsFaktor;
-                    var q = Quaternion.AngleAxis(w, Vector3.up);
-                    fluegel[i].position = scharnier[i] + q * (start[i] - scharnier[i]);
-                    fluegel[i].rotation = q * startRot[i];
-                }
-            }
+            PoseSetzen(Mathf.Clamp01(zeit / dauer));
+            if (kamera != null && Vector3.Distance(kamera.transform.position, transform.position) < ruettelReichweite) kamera.AddShake(ruetteln);
             yield return null;
         }
-
+        PoseSetzen(1f);
         offen = true;
         beschaeftigt = false;
         if (sperrenNachOeffnen != null)

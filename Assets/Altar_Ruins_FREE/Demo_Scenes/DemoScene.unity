@@ -5725,6 +5725,9 @@ MonoBehaviour:
   ringAmFinger: {fileID: 0}
   hubHoehe: 0.7
   ziehDauer: 1.4
+  sitzPosition: {x: 0.123, y: -0.02, z: 0.024}
+  sitzRotation: {x: -10.8, y: -0.76, z: 30.5}
+  sitzSkalierung: 0.01678161
   hinweis: '[E] Schwert ziehen'
   fehlMeldung: "Das Schwert sitzt fest. Dir fehlt etwas, das dich w\xFCrdig macht."
   erfolgsMeldung: Der Ring leuchtet auf. Das Schwert gibt nach.

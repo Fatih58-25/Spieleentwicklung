@@ -300,6 +300,92 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4854340614151478894, guid: 424c6d81115716b4881044b2f2130cdf, type: 3}
+--- !u!1 &183659984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183659987}
+  - component: {fileID: 183659986}
+  - component: {fileID: 183659985}
+  m_Layer: 0
+  m_Name: Tor_Ost_Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &183659985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183659984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751327b845ceeda40bcfa5834d1bdf96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StadtTor
+  promptText: {fileID: 0}
+  promptGruppe: {fileID: 0}
+  spielerTag: Player
+  fluegel:
+  - {fileID: 872046796}
+  - {fileID: 1189131242}
+  benoetigterSchluessel: Schluessel_A
+  schieben: 0
+  winkel: 100
+  umkehren: 0
+  dauer: 7
+  sperrenNachOeffnen: []
+  mitOeffnen: []
+  ruetteln: 0.03
+  ruettelReichweite: 80
+  hinweis: "[E] Tor \xF6ffnen"
+  verschlossenMeldung: "Das Tor ist verschlossen. Du brauchst einen Schl\xFCssel."
+  offenMeldung: "Der Schl\xFCssel dreht sich. Das Tor \xF6ffnet sich."
+  verschlossenSound: {fileID: 0}
+  oeffnenSound: {fileID: 0}
+--- !u!135 &183659986
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183659984}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 25
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &183659987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183659984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1089.7025, y: 1.5, z: -1261.2701}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &189956336 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3642423707263826436, guid: f0f93e7b8193c6541aed89d6c6c445c1, type: 3}
@@ -327,6 +413,92 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8514138765129308890, guid: f0f93e7b8193c6541aed89d6c6c445c1, type: 3}
+--- !u!1 &244768064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244768067}
+  - component: {fileID: 244768066}
+  - component: {fileID: 244768065}
+  m_Layer: 0
+  m_Name: Tor_Nord_Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &244768065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244768064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751327b845ceeda40bcfa5834d1bdf96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StadtTor
+  promptText: {fileID: 0}
+  promptGruppe: {fileID: 0}
+  spielerTag: Player
+  fluegel:
+  - {fileID: 741662190}
+  - {fileID: 1302993379}
+  benoetigterSchluessel: Schluessel_A
+  schieben: 0
+  winkel: 100
+  umkehren: 0
+  dauer: 7
+  sperrenNachOeffnen: []
+  mitOeffnen: []
+  ruetteln: 0.03
+  ruettelReichweite: 80
+  hinweis: "[E] Tor \xF6ffnen"
+  verschlossenMeldung: "Das Tor ist verschlossen. Du brauchst einen Schl\xFCssel."
+  offenMeldung: "Der Schl\xFCssel dreht sich. Das Tor \xF6ffnet sich."
+  verschlossenSound: {fileID: 0}
+  oeffnenSound: {fileID: 0}
+--- !u!135 &244768066
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244768064}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 25
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &244768067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244768064}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -164.70248, y: 1.5, z: -2186.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &263917699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8076859187814795507, guid: 424c6d81115716b4881044b2f2130cdf, type: 3}
@@ -761,6 +933,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2325752022042820348, guid: 7116527df3fb9284b9367af082c5563d, type: 3}
+--- !u!4 &509825902 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6734892114080947981, guid: 7116527df3fb9284b9367af082c5563d, type: 3}
+  m_PrefabInstance: {fileID: 996423564}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &547121342
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +1147,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2516156464295742369, guid: 2559e08b41b961141b4772e3439c71ce, type: 3}
+--- !u!4 &741662190 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8333814287542063066, guid: 2559e08b41b961141b4772e3439c71ce, type: 3}
+  m_PrefabInstance: {fileID: 1050432820}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &742532782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1306,6 +1488,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5295156424447088820, guid: aae935b5935794343abc02c07f569f50, type: 3}
+--- !u!4 &872046796 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5217494902213592489, guid: aae935b5935794343abc02c07f569f50, type: 3}
+  m_PrefabInstance: {fileID: 1556853427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &885115632 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8120645161840255203, guid: 424c6d81115716b4881044b2f2130cdf, type: 3}
@@ -1333,6 +1520,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3374636972842197644, guid: 424c6d81115716b4881044b2f2130cdf, type: 3}
+--- !u!4 &885115637 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1467947527405169069, guid: 424c6d81115716b4881044b2f2130cdf, type: 3}
+  m_PrefabInstance: {fileID: 1287381695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &898120925 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8487506920744356987, guid: 2559e08b41b961141b4772e3439c71ce, type: 3}
@@ -1956,6 +2148,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3447325546770523693, guid: aae935b5935794343abc02c07f569f50, type: 3}
+--- !u!4 &1189131242 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3153368643543950980, guid: aae935b5935794343abc02c07f569f50, type: 3}
+  m_PrefabInstance: {fileID: 1556853427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1269113549 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2738304298685569188, guid: f0f93e7b8193c6541aed89d6c6c445c1, type: 3}
@@ -2099,6 +2296,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2641480841585290432, guid: 2559e08b41b961141b4772e3439c71ce, type: 3}
+--- !u!4 &1302993379 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7344732872373692338, guid: 2559e08b41b961141b4772e3439c71ce, type: 3}
+  m_PrefabInstance: {fileID: 1050432820}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1323887908 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2919821138885506690, guid: 2559e08b41b961141b4772e3439c71ce, type: 3}
@@ -2453,6 +2655,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1909423963428191368, guid: 424c6d81115716b4881044b2f2130cdf, type: 3}
+--- !u!4 &1672084456 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8181200965083691991, guid: 424c6d81115716b4881044b2f2130cdf, type: 3}
+  m_PrefabInstance: {fileID: 1287381695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1675694475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,6 +2703,92 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1688613320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1688613323}
+  - component: {fileID: 1688613322}
+  - component: {fileID: 1688613321}
+  m_Layer: 0
+  m_Name: Tor_Sued_Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1688613321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688613320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751327b845ceeda40bcfa5834d1bdf96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StadtTor
+  promptText: {fileID: 0}
+  promptGruppe: {fileID: 0}
+  spielerTag: Player
+  fluegel:
+  - {fileID: 1749527545}
+  - {fileID: 509825902}
+  benoetigterSchluessel: Schluessel_A
+  schieben: 0
+  winkel: 100
+  umkehren: 0
+  dauer: 7
+  sperrenNachOeffnen: []
+  mitOeffnen: []
+  ruetteln: 0.03
+  ruettelReichweite: 80
+  hinweis: "[E] Tor \xF6ffnen"
+  verschlossenMeldung: "Das Tor ist verschlossen. Du brauchst einen Schl\xFCssel."
+  offenMeldung: "Der Schl\xFCssel dreht sich. Das Tor \xF6ffnet sich."
+  verschlossenSound: {fileID: 0}
+  oeffnenSound: {fileID: 0}
+--- !u!135 &1688613322
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688613320}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 25
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1688613323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688613320}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -164.70248, y: 1.5, z: -336.2701}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2609,6 +2902,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3896670479793333212, guid: 7116527df3fb9284b9367af082c5563d, type: 3}
+--- !u!4 &1749527545 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3587873385608385507, guid: 7116527df3fb9284b9367af082c5563d, type: 3}
+  m_PrefabInstance: {fileID: 996423564}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1758792771 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7988210740312475843, guid: f0f93e7b8193c6541aed89d6c6c445c1, type: 3}
@@ -2636,6 +2934,92 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -806337537796791943, guid: f0f93e7b8193c6541aed89d6c6c445c1, type: 3}
+--- !u!1 &1823333742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1823333745}
+  - component: {fileID: 1823333744}
+  - component: {fileID: 1823333743}
+  m_Layer: 0
+  m_Name: Tor_West_Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1823333743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823333742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751327b845ceeda40bcfa5834d1bdf96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StadtTor
+  promptText: {fileID: 0}
+  promptGruppe: {fileID: 0}
+  spielerTag: Player
+  fluegel:
+  - {fileID: 1672084456}
+  - {fileID: 885115637}
+  benoetigterSchluessel: Schluessel_A
+  schieben: 0
+  winkel: 100
+  umkehren: 0
+  dauer: 7
+  sperrenNachOeffnen: []
+  mitOeffnen: []
+  ruetteln: 0.03
+  ruettelReichweite: 80
+  hinweis: "[E] Tor \xF6ffnen"
+  verschlossenMeldung: "Das Tor ist verschlossen. Du brauchst einen Schl\xFCssel."
+  offenMeldung: "Der Schl\xFCssel dreht sich. Das Tor \xF6ffnet sich."
+  verschlossenSound: {fileID: 0}
+  oeffnenSound: {fileID: 0}
+--- !u!135 &1823333744
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823333742}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 25
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1823333745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823333742}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 760.2975, y: 1.5, z: -1261.2701}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1867894911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2418520367797563262, guid: 0f9c3934a4ab06648af009b5cc63f44e, type: 3}
@@ -2939,3 +3323,7 @@ SceneRoots:
   - {fileID: 1953445558}
   - {fileID: 1882648156}
   - {fileID: 1675694477}
+  - {fileID: 244768067}
+  - {fileID: 183659987}
+  - {fileID: 1688613323}
+  - {fileID: 1823333745}

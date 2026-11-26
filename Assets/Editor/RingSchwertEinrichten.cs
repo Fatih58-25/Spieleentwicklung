@@ -407,6 +407,70 @@ public static class RingSchwertEinrichten
         Debug.Log("Spiel: Truhe eingerichtet. Das alte Skript ChestOpen an dieser Truhe wurde ausgeschaltet. Brief, Schlüssel und Ring erscheinen nach dem Öffnen in der Truhe.");
     }
 
+    static Transform FindeObjekt(string name)
+    {
+        foreach (var t in Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            if (t.name == name) return t;
+        }
+        return null;
+    }
+
+    [MenuItem("Spiel/10 Stadttore einrichten (alle vier Tore, Schluessel A)")]
+    public static void StadtToreEinrichten()
+    {
+        string[] namen = { "Nord", "Ost", "Sued", "West" };
+        var paare = new List<Transform[]>();
+        var benutzt = new List<string>();
+        var mitten = new List<Bounds>();
+        foreach (var n in namen)
+        {
+            var links = FindeObjekt("Tor_" + n + "_Fluegel_Links");
+            var rechts = FindeObjekt("Tor_" + n + "_Fluegel_Rechts");
+            if (links == null || rechts == null)
+            {
+                Debug.LogWarning("Tor " + n + ": Die Flügel wurden nicht gefunden. Ist die Szene Stadt geöffnet?");
+                continue;
+            }
+            Bounds b;
+            if (!GrenzenBerechnen(new[] { links.gameObject, rechts.gameObject }, out b)) continue;
+            paare.Add(new[] { links, rechts });
+            benutzt.Add(n);
+            mitten.Add(b);
+        }
+        if (paare.Count == 0) return;
+        Vector3 stadtMitte = Vector3.zero;
+        foreach (var b in mitten) stadtMitte += b.center;
+        stadtMitte /= mitten.Count;
+        for (int i = 0; i < paare.Count; i++)
+        {
+            string zoneName = "Tor_" + benutzt[i] + "_Zone";
+            var alt = FindeObjekt(zoneName);
+            if (alt != null) Undo.DestroyObjectImmediate(alt.gameObject);
+            var zone = new GameObject(zoneName);
+            Undo.RegisterCreatedObjectUndo(zone, zoneName);
+            UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(zone, paare[i][0].gameObject.scene);
+            zone.transform.position = new Vector3(mitten[i].center.x, mitten[i].min.y + 1f, mitten[i].center.z);
+            var col = zone.AddComponent<SphereCollider>();
+            col.isTrigger = true;
+            col.radius = 25f;
+            var tor = Undo.AddComponent<StadtTor>(zone);
+            tor.fluegel = paare[i];
+            tor.benoetigterSchluessel = "Schluessel_A";
+            tor.schieben = false;
+            tor.winkel = 100f;
+            tor.dauer = 7f;
+            tor.NachAussenOeffnen(new Vector3(stadtMitte.x, 0f, stadtMitte.z));
+            foreach (var f in paare[i])
+            {
+                foreach (var t in f.GetComponentsInChildren<Transform>(true)) GameObjectUtility.SetStaticEditorFlags(t.gameObject, 0);
+            }
+            EditorUtility.SetDirty(zone);
+        }
+        UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
+        Debug.Log("Spiel: " + paare.Count + " Stadttor(e) eingerichtet. Mit Schlüssel A öffnen sie sich per E. Öffnet ein Tor in die falsche Richtung, hake bei der Zone Umkehren an.");
+    }
+
     static bool GrenzenBerechnen(IEnumerable<GameObject> objekte, out Bounds b)
     {
         b = new Bounds();
