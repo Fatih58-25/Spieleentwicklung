@@ -4680,6 +4680,7 @@ MonoBehaviour:
   distance: 1.6
   height: 1.22
   cameraXOffset: 0.36
+  verticalSmoothTime: 0.08
   enableCollision: 1
   collisionLayers:
     serializedVersion: 2
@@ -31802,15 +31803,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 222.142
+      value: -193.822
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -60.534
+      value: 0.423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 500.3
+      value: -187.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33592,6 +33593,7 @@ MonoBehaviour:
   rotationSpeed: 12
   gravity: -20
   jumpHeight: 1.5
+  bodenHaftung: 0.8
   attacks:
   - stateName: Attack1
     comboWindowStart: 0.22

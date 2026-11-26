@@ -14,6 +14,11 @@ public class GegenstandAufheben : InteraktionsZone
 
     bool genommen;
 
+    public bool Genommen
+    {
+        get { return genommen; }
+    }
+
     protected override float MindestReichweite
     {
         get { return 1.4f; }

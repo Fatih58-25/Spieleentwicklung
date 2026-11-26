@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc2a090d00ce02409c74c0dcad396fe, type: 3}
+  m_Name: Weltkarte
+  m_EditorClassIdentifier: Assembly-CSharp::WeltkartenDaten
+  karte: {fileID: 2800000, guid: 7370b9a161f4d1f4c8948c1ea2c99050, type: 3}
+  ursprung: {x: -2065.6143, y: -2545.597}
+  groesse: 3801.8237
+  regionen:
+  - name: Stadt
+    mitte: {x: -164.70251, y: -1261.27}
+    groesse: {x: 2250, y: 2250}
+    farbe: {r: 0.45, g: 0.75, b: 1, a: 1}
+  - name: Forest-Biom
+    mitte: {x: -62.399994, y: 963.9}
+    groesse: {x: 266, y: 266}
+    farbe: {r: 0.45, g: 1, b: 0.45, a: 1}
+  - name: "W\xFCste"
+    mitte: {x: -3, y: 312.87}
+    groesse: {x: 634, y: 634}
+    farbe: {r: 1, g: 0.7, b: 0.3, a: 1}
