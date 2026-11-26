@@ -31841,6 +31841,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8236615327842799068, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3638193520734090830, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1731024231264914805, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1693546492923637869, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
       propertyPath: m_Name
       value: Player
@@ -31848,6 +31864,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623432664241722853, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372134353506958267, guid: 136df40c7059ab4c49345c55811c5384, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

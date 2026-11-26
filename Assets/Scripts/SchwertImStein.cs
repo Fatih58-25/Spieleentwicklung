@@ -79,6 +79,8 @@ public class SchwertImStein : InteraktionsZone
         beschaeftigt = true;
         Meldung(erfolgsMeldung, 3f);
         if (ziehSound != null) AudioSource.PlayClipAtPoint(ziehSound, schwertObjekt.transform.position);
+        var faust = HandFaust.Holen(spielerTag);
+        if (faust != null) faust.Schliessen(0.6f);
         var t = schwertObjekt.transform;
         Vector3 von = startPosition;
         Vector3 nach = von + Vector3.up * hubHoehe;
