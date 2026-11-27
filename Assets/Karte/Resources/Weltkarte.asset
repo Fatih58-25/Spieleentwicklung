@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bc2a090d00ce02409c74c0dcad396fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 32ed0df83a0442749a7a8aaa340900de, type: 3}
   m_Name: Weltkarte
   m_EditorClassIdentifier: Assembly-CSharp::WeltkartenDaten
   karte: {fileID: 2800000, guid: 7370b9a161f4d1f4c8948c1ea2c99050, type: 3}
@@ -17,8 +17,8 @@ MonoBehaviour:
   groesse: 3801.8237
   regionen:
   - name: Stadt
-    mitte: {x: -164.70251, y: -1261.27}
-    groesse: {x: 2250, y: 2250}
+    mitte: {x: -164.70251, y: -1261.2701}
+    groesse: {x: 2250, y: 2249.9998}
     farbe: {r: 0.45, g: 0.75, b: 1, a: 1}
   - name: Forest-Biom
     mitte: {x: -62.399994, y: 963.9}

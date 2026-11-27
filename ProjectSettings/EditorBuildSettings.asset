@@ -8,6 +8,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TEST SCENE.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Samo.unity
+    guid: 03a12130067c99e4ba1718e7a9ebf378
+  - enabled: 1
+    path: Assets/Scenes/Stadt.unity
+    guid: f1639763afaa06c45b2ea652e25e2906
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: 24e188bd3315d714db6c3befe1c78cee
+  - enabled: 1
+    path: Assets/Scenes/Wueste.unity
+    guid: 270676c4301683b43bd340c85547f9d9
+  - enabled: 1
+    path: Assets/Altar_Ruins_FREE/Demo_Scenes/DemoScene.unity
+    guid: 6d3319254791ae841bbd846289ce2358
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
