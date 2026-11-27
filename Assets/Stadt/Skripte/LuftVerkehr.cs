@@ -8,6 +8,7 @@ public class LuftVerkehr : MonoBehaviour
     public GameObject luftbus;
     public GameObject drohne;
     [Range(0.2f, 3f)] public float tempo = 1f;
+    public bool kollision;
 
     class Flugbahn
     {
@@ -90,6 +91,7 @@ public class LuftVerkehr : MonoBehaviour
             {
                 var go = Instantiate(vorlage, transform);
                 go.name = "Fl_" + li + "_" + i;
+                if (kollision) StadtKollision.BoxHinzufuegen(go);
                 t = go.transform;
             }
             float f = (i + 0.37f * (li % 3)) / anzahl;

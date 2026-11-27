@@ -10,6 +10,7 @@ public class FahrzeugVerkehr : MonoBehaviour
     [Range(0.2f, 3f)] public float tempo = 1f;
     public int zufallswert = 7;
     public bool raddrehungUmkehren = false;
+    public bool kollision = true;
 
     const float CX = StadtRaum.CX;
     const float CY = StadtRaum.CY;
@@ -134,6 +135,7 @@ public class FahrzeugVerkehr : MonoBehaviour
                 if (vorlage == null) continue;
                 var go = Instantiate(vorlage, transform);
                 go.name = "Fz_" + i + "_" + k;
+                if (kollision) StadtKollision.BoxHinzufuegen(go);
                 fahrzeuge.Add(go.transform);
                 bahnIndex.Add(i);
                 weg.Add(((k + phase) / anzahl) * b.laenge);

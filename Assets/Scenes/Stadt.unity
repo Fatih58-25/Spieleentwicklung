@@ -975,6 +975,7 @@ MonoBehaviour:
   tempo: 1
   zufallswert: 7
   raddrehungUmkehren: 0
+  kollision: 1
 --- !u!4 &547121344
 Transform:
   m_ObjectHideFlags: 0
@@ -3183,6 +3184,7 @@ MonoBehaviour:
   luftbus: {fileID: 919132149155446097, guid: b1a030dd732e6644f926586fd83ddd6a, type: 3}
   drohne: {fileID: 919132149155446097, guid: eb54eeee894f0024488ff3f554bb2961, type: 3}
   tempo: 1
+  kollision: 0
 --- !u!4 &1953445558
 Transform:
   m_ObjectHideFlags: 0

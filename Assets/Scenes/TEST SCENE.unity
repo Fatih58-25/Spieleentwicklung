@@ -2985,6 +2985,96 @@ MonoBehaviour:
   hoverAmplitude: 0.5
   hoverFrequency: 2
   stuckTime: 1.5
+--- !u!114 &239674866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239674861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15e5ea08711604418875e4c6dc7f35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenPatrouille
+  route: 0
+  wegpunkte: []
+  hinUndZurueck: 0
+  radius: 60
+  wartezeit: {x: 1, y: 4}
+  ankunftsAbstand: 2.5935905
+  geschwindigkeit: 3
+  beschleunigung: 4
+  drehgeschwindigkeit: 120
+  fliegend: 0
+  flughoehe: 8
+  bodenAbstand: 0
+  navMeshNutzen: 1
+  hindernisse:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  koerperRadius: 2.5935905
+  koerperHoehe: 5.499153
+  sichtweite: 15.5615425
+  sicherheitsabstand: 4.149745
+  ausweichwinkel: 35
+  festhaengZeit: 4
+  stufenHoehe: 0.6
+  bewegteHindernisse: 1
+  geschwindigkeitParameter: Speed
+--- !u!114 &239674867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239674861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5301a1d136e336f4ba02389890250af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenLaufanimation
+  modus: 0
+  animationsWurzel: {fileID: 0}
+  laufClip: {fileID: 0}
+  stehClip: {fileID: 0}
+  schrittLaenge: 6.5989842
+  ueberblendZeit: 0.25
+  stehZustand: Idle
+  gehZustand: Walk
+  laufZustand: Run
+  laufAbTempo: 6
+  animatorReferenzTempo: 3
+  wippHoehe: 0.13747883
+  wankWinkel: 4
+  neigeWinkel: 6
+  rotoren: []
+  rotorenAutomatischSuchen: 1
+  rotorAchse: {x: 0, y: 1, z: 0}
+  rotorDrehzahl: 720
+--- !u!136 &239674868
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239674861}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.18, z: 0}
 --- !u!1 &240412601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3299444193077036155, guid: 934473ff610f247f89c87da755dd9b88, type: 3}
@@ -7056,6 +7146,96 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &459491555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459491551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15e5ea08711604418875e4c6dc7f35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenPatrouille
+  route: 0
+  wegpunkte: []
+  hinUndZurueck: 0
+  radius: 60
+  wartezeit: {x: 1, y: 4}
+  ankunftsAbstand: 2.5935905
+  geschwindigkeit: 3
+  beschleunigung: 4
+  drehgeschwindigkeit: 120
+  fliegend: 0
+  flughoehe: 8
+  bodenAbstand: 0
+  navMeshNutzen: 1
+  hindernisse:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  koerperRadius: 2.5935905
+  koerperHoehe: 5.499153
+  sichtweite: 15.5615425
+  sicherheitsabstand: 4.149745
+  ausweichwinkel: 35
+  festhaengZeit: 4
+  stufenHoehe: 0.6
+  bewegteHindernisse: 1
+  geschwindigkeitParameter: Speed
+--- !u!114 &459491556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459491551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5301a1d136e336f4ba02389890250af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenLaufanimation
+  modus: 0
+  animationsWurzel: {fileID: 0}
+  laufClip: {fileID: 0}
+  stehClip: {fileID: 0}
+  schrittLaenge: 6.5989842
+  ueberblendZeit: 0.25
+  stehZustand: Idle
+  gehZustand: Walk
+  laufZustand: Run
+  laufAbTempo: 6
+  animatorReferenzTempo: 3
+  wippHoehe: 0.13747883
+  wankWinkel: 4
+  neigeWinkel: 6
+  rotoren: []
+  rotorenAutomatischSuchen: 1
+  rotorAchse: {x: 0, y: 1, z: 0}
+  rotorDrehzahl: 720
+--- !u!136 &459491557
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459491551}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.28, z: 0}
 --- !u!1 &462034452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 484347954079692904, guid: 934473ff610f247f89c87da755dd9b88, type: 3}
@@ -23020,27 +23200,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -123.362
+      value: -115.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.93
+      value: 48.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -262.28
+      value: -1025.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23070,6 +23250,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_Name
       value: flyin robot
@@ -23088,6 +23272,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       insertIndex: -1
       addedObject: {fileID: 239674864}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 239674866}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 239674867}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 239674868}
   m_SourcePrefab: {fileID: 100100000, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
 --- !u!1 &1291677051 stripped
 GameObject:
@@ -24816,11 +25009,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3173b4c6551cec9e09f12a243aee4ce9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.361
+      value: 0.272
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3173b4c6551cec9e09f12a243aee4ce9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -281.103
+      value: -531.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3173b4c6551cec9e09f12a243aee4ce9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24892,6 +25085,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3173b4c6551cec9e09f12a243aee4ce9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1853912830}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3173b4c6551cec9e09f12a243aee4ce9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1853912832}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3173b4c6551cec9e09f12a243aee4ce9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1853912833}
     - targetCorrespondingSourceObject: {fileID: 1248767145413436960, guid: 3173b4c6551cec9e09f12a243aee4ce9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1777495536}
@@ -31132,6 +31331,73 @@ MonoBehaviour:
   showHealthBar: 1
   healthBarAnchor: {fileID: 0}
   healthBarExtraHeight: 0.22
+--- !u!114 &1853912832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853912820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15e5ea08711604418875e4c6dc7f35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenPatrouille
+  route: 0
+  wegpunkte: []
+  hinUndZurueck: 0
+  radius: 60
+  wartezeit: {x: 1, y: 4}
+  ankunftsAbstand: 2
+  geschwindigkeit: 3
+  beschleunigung: 4
+  drehgeschwindigkeit: 120
+  fliegend: 0
+  flughoehe: 8
+  bodenAbstand: 0
+  navMeshNutzen: 1
+  hindernisse:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  koerperRadius: 1.7612731
+  koerperHoehe: 1.6346692
+  sichtweite: 10.567638
+  sicherheitsabstand: 2.818037
+  ausweichwinkel: 35
+  festhaengZeit: 4
+  stufenHoehe: 0.6
+  bewegteHindernisse: 1
+  geschwindigkeitParameter: Speed
+--- !u!114 &1853912833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853912820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5301a1d136e336f4ba02389890250af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenLaufanimation
+  modus: 1
+  animationsWurzel: {fileID: 0}
+  laufClip: {fileID: 0}
+  stehClip: {fileID: 0}
+  schrittLaenge: 1.961603
+  ueberblendZeit: 0.25
+  stehZustand: idle
+  gehZustand: Walk
+  laufZustand: run
+  laufAbTempo: 6
+  animatorReferenzTempo: 3
+  wippHoehe: 0.04086673
+  wankWinkel: 4
+  neigeWinkel: 6
+  rotoren: []
+  rotorenAutomatischSuchen: 1
+  rotorAchse: {x: 0, y: 1, z: 0}
+  rotorDrehzahl: 720
 --- !u!1 &1858099130 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 422891494453489561, guid: 934473ff610f247f89c87da755dd9b88, type: 3}
@@ -32778,15 +33044,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32794,11 +33060,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: 49.77
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -262.28
+      value: -1025.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32828,6 +33094,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       propertyPath: m_Name
       value: flyin robot (1)
@@ -32846,6 +33116,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
       insertIndex: -1
       addedObject: {fileID: 459491552}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 459491555}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 459491556}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 459491557}
   m_SourcePrefab: {fileID: 100100000, guid: 11918f99a1afef868b32cde2834f10be, type: 3}
 --- !u!1 &1963356311 stripped
 GameObject:
@@ -36890,7 +37169,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148952491359}
   m_LocalRotation: {x: -0, y: 0.9266724, z: -0, w: 0.37587008}
-  m_LocalPosition: {x: 0, y: 0, z: -265.98}
+  m_LocalPosition: {x: 0, y: 0, z: -484.9}
   m_LocalScale: {x: 0.26745513, y: 0.26745513, z: 0.26745513}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36923,7 +37202,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 135.844, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -144.09, y: -0.34500003}
+  m_AnchoredPosition: {x: 5.1, y: -0.03}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &543450653165543338
@@ -36934,7 +37213,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148623115536}
   m_LocalRotation: {x: -0, y: 0.4471995, z: -0, w: 0.89443433}
-  m_LocalPosition: {x: 0, y: 0, z: -273.9}
+  m_LocalPosition: {x: 0, y: 0, z: -518}
   m_LocalScale: {x: 0.27854, y: 0.27854, z: 0.27854}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36967,7 +37246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 53.128, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125.4, y: -0.549}
+  m_AnchoredPosition: {x: -14.2, y: 0.14}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &610396515682433221
@@ -37367,6 +37646,8 @@ GameObject:
   - component: {fileID: 923046370}
   - component: {fileID: 919132148623115537}
   - component: {fileID: 919132148623115538}
+  - component: {fileID: 919132148623115539}
+  - component: {fileID: 919132148623115540}
   m_Layer: 0
   m_Name: robot-spider
   m_TagString: Enemy
@@ -37458,6 +37739,73 @@ MonoBehaviour:
   showHealthBar: 1
   healthBarAnchor: {fileID: 0}
   healthBarExtraHeight: 0.22
+--- !u!114 &919132148623115539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148623115536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15e5ea08711604418875e4c6dc7f35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenPatrouille
+  route: 0
+  wegpunkte: []
+  hinUndZurueck: 0
+  radius: 60
+  wartezeit: {x: 1, y: 4}
+  ankunftsAbstand: 2
+  geschwindigkeit: 3
+  beschleunigung: 4
+  drehgeschwindigkeit: 120
+  fliegend: 0
+  flughoehe: 8
+  bodenAbstand: 0
+  navMeshNutzen: 1
+  hindernisse:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  koerperRadius: 1.1047851
+  koerperHoehe: 1.4587936
+  sichtweite: 10
+  sicherheitsabstand: 2.5
+  ausweichwinkel: 35
+  festhaengZeit: 4
+  stufenHoehe: 0.6
+  bewegteHindernisse: 1
+  geschwindigkeitParameter: Speed
+--- !u!114 &919132148623115540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148623115536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5301a1d136e336f4ba02389890250af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenLaufanimation
+  modus: 0
+  animationsWurzel: {fileID: 0}
+  laufClip: {fileID: 0}
+  stehClip: {fileID: 0}
+  schrittLaenge: 1.7505524
+  ueberblendZeit: 0.25
+  stehZustand: Idle
+  gehZustand: Walk
+  laufZustand: Run
+  laufAbTempo: 6
+  animatorReferenzTempo: 3
+  wippHoehe: 0.036469843
+  wankWinkel: 4
+  neigeWinkel: 6
+  rotoren: []
+  rotorenAutomatischSuchen: 1
+  rotorAchse: {x: 0, y: 1, z: 0}
+  rotorDrehzahl: 720
 --- !u!1 &919132148952491359
 GameObject:
   m_ObjectHideFlags: 0
@@ -37471,6 +37819,8 @@ GameObject:
   - component: {fileID: 1824135737}
   - component: {fileID: 1824135740}
   - component: {fileID: 919132148952491360}
+  - component: {fileID: 919132148952491361}
+  - component: {fileID: 919132148952491362}
   m_Layer: 0
   m_Name: robot-spider (1)
   m_TagString: Enemy
@@ -37493,6 +37843,73 @@ MonoBehaviour:
   mainFill: {fileID: 0}
   damageFill: {fileID: 0}
   canvasGroup: {fileID: 0}
+--- !u!114 &919132148952491361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148952491359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15e5ea08711604418875e4c6dc7f35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenPatrouille
+  route: 0
+  wegpunkte: []
+  hinUndZurueck: 0
+  radius: 60
+  wartezeit: {x: 1, y: 4}
+  ankunftsAbstand: 2
+  geschwindigkeit: 3
+  beschleunigung: 4
+  drehgeschwindigkeit: 120
+  fliegend: 0
+  flughoehe: 8
+  bodenAbstand: 0
+  navMeshNutzen: 1
+  hindernisse:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  koerperRadius: 1.0680264
+  koerperHoehe: 1.4007392
+  sichtweite: 10
+  sicherheitsabstand: 2.5
+  ausweichwinkel: 35
+  festhaengZeit: 4
+  stufenHoehe: 0.6
+  bewegteHindernisse: 1
+  geschwindigkeitParameter: Speed
+--- !u!114 &919132148952491362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148952491359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5301a1d136e336f4ba02389890250af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenLaufanimation
+  modus: 0
+  animationsWurzel: {fileID: 0}
+  laufClip: {fileID: 0}
+  stehClip: {fileID: 0}
+  schrittLaenge: 1.6808871
+  ueberblendZeit: 0.25
+  stehZustand: Idle
+  gehZustand: Walk
+  laufZustand: Run
+  laufAbTempo: 6
+  animatorReferenzTempo: 3
+  wippHoehe: 0.03501848
+  wankWinkel: 4
+  neigeWinkel: 6
+  rotoren: []
+  rotorenAutomatischSuchen: 1
+  rotorAchse: {x: 0, y: 1, z: 0}
+  rotorDrehzahl: 720
 --- !u!1 &931620697659998627
 GameObject:
   m_ObjectHideFlags: 0
@@ -39423,6 +39840,8 @@ GameObject:
   - component: {fileID: 3211082576501215260}
   - component: {fileID: 3211082576501215259}
   - component: {fileID: 3211082576501215258}
+  - component: {fileID: 3211082576501215262}
+  - component: {fileID: 3211082576501215261}
   m_Layer: 0
   m_Name: SciFi Beast06 Bull Skin1
   m_TagString: Enemy
@@ -40734,7 +41153,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2328756035303594317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -276.76898}
+  m_LocalPosition: {x: 0, y: 0, z: -399.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -40745,7 +41164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -137.47038, y: -0.13849354}
+  m_AnchoredPosition: {x: -137.47038, y: 0.56}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &3114669650346293212
@@ -41182,6 +41601,73 @@ MonoBehaviour:
   mainFill: {fileID: 0}
   damageFill: {fileID: 0}
   canvasGroup: {fileID: 0}
+--- !u!114 &3211082576501215261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2328756035303594317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5301a1d136e336f4ba02389890250af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenLaufanimation
+  modus: 1
+  animationsWurzel: {fileID: 0}
+  laufClip: {fileID: 0}
+  stehClip: {fileID: 0}
+  schrittLaenge: 3.6425881
+  ueberblendZeit: 0.25
+  stehZustand: Idle1
+  gehZustand: WalkB
+  laufZustand: Run
+  laufAbTempo: 6
+  animatorReferenzTempo: 3
+  wippHoehe: 0.075887255
+  wankWinkel: 4
+  neigeWinkel: 6
+  rotoren: []
+  rotorenAutomatischSuchen: 1
+  rotorAchse: {x: 0, y: 1, z: 0}
+  rotorDrehzahl: 720
+--- !u!114 &3211082576501215262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2328756035303594317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15e5ea08711604418875e4c6dc7f35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaschinenPatrouille
+  route: 0
+  wegpunkte: []
+  hinUndZurueck: 0
+  radius: 60
+  wartezeit: {x: 1, y: 4}
+  ankunftsAbstand: 2
+  geschwindigkeit: 3
+  beschleunigung: 4
+  drehgeschwindigkeit: 120
+  fliegend: 0
+  flughoehe: 8
+  bodenAbstand: 0
+  navMeshNutzen: 1
+  hindernisse:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  koerperRadius: 1.3609725
+  koerperHoehe: 3.03549
+  sichtweite: 10
+  sicherheitsabstand: 2.5
+  ausweichwinkel: 35
+  festhaengZeit: 4
+  stufenHoehe: 0.6
+  bewegteHindernisse: 1
+  geschwindigkeitParameter: Speed
 --- !u!4 &3228167934582265505
 Transform:
   m_ObjectHideFlags: 0
